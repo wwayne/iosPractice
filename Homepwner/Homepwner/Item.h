@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Item : NSObject
-@property (nonatomic,strong)Item *containedItem;
-@property (nonatomic,weak)Item *container;
+
 @property (nonatomic,copy)NSString *itemName;
 @property (nonatomic,copy)NSString *serialNumber;
 @property int valueInDollars;

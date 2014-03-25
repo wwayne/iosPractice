@@ -39,6 +39,8 @@
     return [self.privateItemsArray copy];
 }
 -(Item *)addStoreItem{
-    return nil;
+    Item *item=[Item randomItem];
+    [self.privateItemsArray addObject:item];
+    return item;
 }
 @end

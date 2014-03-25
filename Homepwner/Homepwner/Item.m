@@ -7,6 +7,9 @@
 //
 
 #import "Item.h"
+@interface Item()
+
+@end
 
 @implementation Item
 -(instancetype)initWithItemName:(NSString *)name valueInDollars:(int)value serialNumber:(NSString *)sNumber
@@ -26,6 +29,9 @@
                      serialNumber:@""];
 }
 +(instancetype)randomItem{
-    
+    Item *item=[[Item alloc] initWithItemName:@"wayne"
+                               valueInDollars:arc4random()%100
+                                 serialNumber:[NSString stringWithFormat:@"%f",(arc4random()%100*0.5)]];
+    return item;
 }
 @end

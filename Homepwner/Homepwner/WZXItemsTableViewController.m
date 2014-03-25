@@ -7,6 +7,8 @@
 //
 
 #import "WZXItemsTableViewController.h"
+#import "Item.h"
+#import "ItemStore.h"
 
 @interface WZXItemsTableViewController ()
 
@@ -16,6 +18,12 @@
 -(instancetype)init
 {
     self=[super initWithStyle:UITableViewStylePlain];
+    if(self){
+        for(int i=0;i<5;i++){
+            [[ItemStore sharedStore] addStoreItem];
+        }
+        
+    }
     return self;
 }
 - (id)initWithStyle:(UITableViewStyle)style
