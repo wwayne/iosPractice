@@ -11,7 +11,7 @@
 #import "ItemStore.h"
 
 @interface WZXItemsTableViewController ()
-
+@property (nonatomic,strong)IBOutlet UIView *headerView;
 @end
 
 @implementation WZXItemsTableViewController
@@ -34,7 +34,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseCell"];
+    UIView *header=self.headerView;
+    [self.tableView setTableHeaderView:header];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -63,17 +65,50 @@
     // Return the number of rows in the section.
     return [[[ItemStore sharedStore] allItems] count];
 }
+-(UIView *)headerView
+{
+    if(!_headerView){
+        [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
+                                      owner:self
+                                    options:nil];
+    }
+    return _headerView;
+}
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"reuseCell" forIndexPath:indexPath];
+    NSArray *allItems=[[ItemStore sharedStore] allItems];
+    cell.textLabel.text=[allItems[indexPath.row] description];
     
-    // Configure the cell...
+    // Configure th
     
     return cell;
 }
-*/
+-(IBAction)toggleEdit:(id)sender
+{
+    if(self.isEditing){
+        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        [self setEditing:NO animated:YES];
+    }
+    else{
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        [self setEditing:YES animated:YES];
+    }
+}
+-(IBAction)addNewItem:(id)sender
+{
+    //create new item
+    Item *newItem=[[ItemStore sharedStore] addStoreItem];
+    //his position
+    NSInteger hisRow=[[[ItemStore sharedStore] allItems] indexOfObject:newItem];
+    //find his indexpath
+    NSIndexPath *newItemPath=[NSIndexPath indexPathForRow:hisRow inSection:0];
+    //insert into table
+    //indexpath include the info of row index and section index
+    [self.tableView insertRowsAtIndexPaths:@[newItemPath] withRowAnimation:UITableViewRowAnimationLeft];
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -84,25 +119,27 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSArray *allItems=[[ItemStore sharedStore] allItems];
+        Item *removeItem=allItems[indexPath.row];
+        [[ItemStore sharedStore] removeStoreItem:removeItem];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
-/*
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    [[ItemStore sharedStore] moveItemPositon:fromIndexPath.row to:toIndexPath.row];
 }
-*/
+
 
 /*
 // Override to support conditional rearranging of the table view.

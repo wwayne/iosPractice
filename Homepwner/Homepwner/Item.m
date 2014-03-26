@@ -19,6 +19,7 @@
         self.itemName=name;
         self.valueInDollars=value;
         self.serialNumber=sNumber;
+        self.description=[NSString stringWithFormat:@"%@ with %i money",name,value];
     }
     return self;
 }
