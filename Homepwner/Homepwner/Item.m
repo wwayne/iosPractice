@@ -19,6 +19,7 @@
         self.itemName=name;
         self.valueInDollars=value;
         self.serialNumber=sNumber;
+        self.description=[NSString stringWithFormat:@"%@ with %i money",name,value];
     }
     return self;
 }
@@ -31,7 +32,10 @@
 +(instancetype)randomItem{
     Item *item=[[Item alloc] initWithItemName:@"wayne"
                                valueInDollars:arc4random()%100
-                                 serialNumber:[NSString stringWithFormat:@"%f",(arc4random()%100*0.5)]];
+                                 serialNumber:[NSString stringWithFormat:@"%0.2f",(arc4random()%100*0.5)]];
     return item;
+}
+-(NSString *)description{
+    return [NSString stringWithFormat:@"%@ with %i money",self.itemName,self.valueInDollars];
 }
 @end

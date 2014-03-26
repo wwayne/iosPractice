@@ -12,6 +12,7 @@
 
 @property (nonatomic,copy)NSString *itemName;
 @property (nonatomic,copy)NSString *serialNumber;
+@property (nonatomic,copy)NSString *description;
 @property int valueInDollars;
 @property (nonatomic,strong,readonly)NSDate *dateCreated;
 +(instancetype)randomItem;
