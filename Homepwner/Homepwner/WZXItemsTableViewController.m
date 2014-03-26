@@ -9,6 +9,7 @@
 #import "WZXItemsTableViewController.h"
 #import "Item.h"
 #import "ItemStore.h"
+#import "ItemDetailVC.h"
 
 @interface WZXItemsTableViewController ()
 @property (nonatomic,strong)IBOutlet UIView *headerView;
@@ -22,7 +23,6 @@
         for(int i=0;i<5;i++){
             [[ItemStore sharedStore] addStoreItem];
         }
-        
     }
     return self;
 }
@@ -43,7 +43,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+    NSLog(@"%@",[[[[ItemStore sharedStore] allItems] objectAtIndex:0] description]);
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -52,12 +57,7 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
- 
-    // Return the number of sections.
-    return 1;
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -79,11 +79,20 @@
 {
     UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"reuseCell" forIndexPath:indexPath];
     NSArray *allItems=[[ItemStore sharedStore] allItems];
+    
     cell.textLabel.text=[allItems[indexPath.row] description];
     
     // Configure th
     
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ItemDetailVC *detailVC=[[ItemDetailVC alloc] init];
+    NSArray *allItems=[[ItemStore sharedStore] allItems];
+    detailVC.item=allItems[indexPath.row];
+    [self.navigationController pushViewController:detailVC
+                                         animated:YES
+     ];
 }
 -(IBAction)toggleEdit:(id)sender
 {

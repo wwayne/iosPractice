@@ -23,6 +23,8 @@
 		B0C33D1518DFB8BC00009DD0 /* WZXItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C33D1418DFB8BC00009DD0 /* WZXItemsTableViewController.m */; };
 		B0C33D1918DFBCFE00009DD0 /* ItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C33D1818DFBCFE00009DD0 /* ItemStore.m */; };
 		B0C33D1D18DFC4B600009DD0 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C33D1C18DFC4B600009DD0 /* Item.m */; };
+		B0E22B7918E2A44000494647 /* ItemDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E22B7718E2A44000494647 /* ItemDetailVC.m */; };
+		B0E22B7A18E2A44000494647 /* ItemDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E22B7818E2A44000494647 /* ItemDetailVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,9 @@
 		B0C33D1818DFBCFE00009DD0 /* ItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemStore.m; sourceTree = "<group>"; };
 		B0C33D1B18DFC4B600009DD0 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		B0C33D1C18DFC4B600009DD0 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		B0E22B7618E2A44000494647 /* ItemDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailVC.h; sourceTree = "<group>"; };
+		B0E22B7718E2A44000494647 /* ItemDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailVC.m; sourceTree = "<group>"; };
+		B0E22B7818E2A44000494647 /* ItemDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetailVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 		B034167318E268C4003B2B57 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				B0E22B7818E2A44000494647 /* ItemDetailVC.xib */,
 				B034167118E268B7003B2B57 /* HeaderView.xib */,
 			);
 			name = xib;
@@ -172,6 +178,8 @@
 			children = (
 				B0C33D1318DFB8BC00009DD0 /* WZXItemsTableViewController.h */,
 				B0C33D1418DFB8BC00009DD0 /* WZXItemsTableViewController.m */,
+				B0E22B7618E2A44000494647 /* ItemDetailVC.h */,
+				B0E22B7718E2A44000494647 /* ItemDetailVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E22B7A18E2A44000494647 /* ItemDetailVC.xib in Resources */,
 				B034167218E268B7003B2B57 /* HeaderView.xib in Resources */,
 				B0C33CEE18DFB6E600009DD0 /* InfoPlist.strings in Resources */,
 				B0C33CF618DFB6E600009DD0 /* Images.xcassets in Resources */,
@@ -296,6 +305,7 @@
 			files = (
 				B0C33D1D18DFC4B600009DD0 /* Item.m in Sources */,
 				B0C33CF418DFB6E600009DD0 /* WZXAppDelegate.m in Sources */,
+				B0E22B7918E2A44000494647 /* ItemDetailVC.m in Sources */,
 				B0C33D1518DFB8BC00009DD0 /* WZXItemsTableViewController.m in Sources */,
 				B0C33D1918DFBCFE00009DD0 /* ItemStore.m in Sources */,
 				B0C33CF018DFB6E600009DD0 /* main.m in Sources */,
@@ -421,7 +431,7 @@
 				INFOPLIST_FILE = "Homepwner/Homepwner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -437,7 +447,7 @@
 				INFOPLIST_FILE = "Homepwner/Homepwner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
