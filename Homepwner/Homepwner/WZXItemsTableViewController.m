@@ -54,7 +54,7 @@
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-    NSLog(@"%@",[[[[ItemStore sharedStore] allItems] objectAtIndex:0] description]);
+ 
 }
 - (void)didReceiveMemoryWarning
 {

@@ -41,6 +41,7 @@
 -(Item *)addStoreItem{
     Item *item=[Item randomItem];
     [self.privateItemsArray addObject:item];
+    NSLog(@"%@",self.privateItemsArray);
     return item;
 }
 -(void)removeStoreItem:(Item *)item{

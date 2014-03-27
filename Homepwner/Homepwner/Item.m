@@ -7,6 +7,7 @@
 //
 
 #import "Item.h"
+#import "ImageStore.h"
 @interface Item()
 
 @end
@@ -20,6 +21,8 @@
         self.valueInDollars=value;
         self.serialNumber=sNumber;
         self.description=[NSString stringWithFormat:@"%@ with %i money",name,value];
+        self.itemImage=NULL;
+        self.uniqueKey=[[[NSUUID alloc] init] UUIDString];
     }
     return self;
 }
@@ -37,5 +40,11 @@
 }
 -(NSString *)description{
     return [NSString stringWithFormat:@"%@ with %i money",self.itemName,self.valueInDollars];
+}
+-(UIImage *)itemImage
+{
+    ImageStore *imageStore=[ImageStore sharedImage];
+    return [imageStore fetchImage:self.uniqueKey
+            ];
 }
 @end

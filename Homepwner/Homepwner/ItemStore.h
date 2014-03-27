@@ -10,8 +10,8 @@
 @class Item;
 
 @interface ItemStore : NSObject
-
 @property (nonatomic,readonly) NSArray *allItems;
+
 -(Item *)addStoreItem;
 -(void)removeStoreItem:(Item *)item;
 -(void)moveItemPositon:(NSUInteger)from to:(NSUInteger)to;

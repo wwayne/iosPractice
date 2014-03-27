@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B006076418E3CB9800D8553A /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B006076318E3CB9800D8553A /* ImageStore.m */; };
 		B034167218E268B7003B2B57 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B034167118E268B7003B2B57 /* HeaderView.xib */; };
 		B0C33CE418DFB6E500009DD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C33CE318DFB6E500009DD0 /* Foundation.framework */; };
 		B0C33CE618DFB6E600009DD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C33CE518DFB6E600009DD0 /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B006076218E3CB9800D8553A /* ImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageStore.h; sourceTree = "<group>"; };
+		B006076318E3CB9800D8553A /* ImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStore.m; sourceTree = "<group>"; };
 		B034167118E268B7003B2B57 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		B0C33CE018DFB6E500009DD0 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C33CE318DFB6E500009DD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -191,6 +194,8 @@
 				B0C33D1818DFBCFE00009DD0 /* ItemStore.m */,
 				B0C33D1B18DFC4B600009DD0 /* Item.h */,
 				B0C33D1C18DFC4B600009DD0 /* Item.m */,
+				B006076218E3CB9800D8553A /* ImageStore.h */,
+				B006076318E3CB9800D8553A /* ImageStore.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 			files = (
 				B0C33D1D18DFC4B600009DD0 /* Item.m in Sources */,
 				B0C33CF418DFB6E600009DD0 /* WZXAppDelegate.m in Sources */,
+				B006076418E3CB9800D8553A /* ImageStore.m in Sources */,
 				B0E22B7918E2A44000494647 /* ItemDetailVC.m in Sources */,
 				B0C33D1518DFB8BC00009DD0 /* WZXItemsTableViewController.m in Sources */,
 				B0C33D1918DFBCFE00009DD0 /* ItemStore.m in Sources */,
@@ -426,11 +432,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Homepwner/Homepwner-Prefix.pch";
 				INFOPLIST_FILE = "Homepwner/Homepwner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -442,11 +450,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Homepwner/Homepwner-Prefix.pch";
 				INFOPLIST_FILE = "Homepwner/Homepwner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
