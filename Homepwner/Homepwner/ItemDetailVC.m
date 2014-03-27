@@ -39,4 +39,8 @@
     item.serialNumber=self.serial.text;
     item.valueInDollars=[self.value.text intValue];
 }
+-(void)setItem:(Item *)item{
+    _item=item;
+    self.navigationItem.title=item.itemName;
+}
 @end
