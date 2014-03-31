@@ -7,11 +7,13 @@
 //
 
 #import "JBChartVCViewController.h"
+#import "JBBarChartView.h"
 
-@interface JBChartVCViewController ()
+@interface JBChartVCViewController ()<JBBarChartViewDelegate, JBBarChartViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
-
+@property (strong, nonatomic) IBOutlet JBBarChartView *barChart;
+@property (nonatomic,strong) NSArray *dataArray;
 
 @end
 
@@ -21,6 +23,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.dataArray=[[NSArray alloc] initWithObjects:@1.0,@2.0,@3.0,@4.0,@5.0, nil];
     }
     return self;
 }
@@ -32,11 +35,25 @@
     
     
 }
+-(void)loadView
+{
+    [super loadView];
+    self.barChart.delegate = self;
+    self.barChart.dataSource = self;
+    [self.barChart reloadData];
 
+}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.barChart setState:JBChartViewStateExpanded];
     self.label.text=@"bar";
  
+}
+- (UIView *)barChartView:(JBBarChartView *)barChartView barViewAtIndex:(NSUInteger)index
+{
+    UIView *barView = [[UIView alloc] init];
+    barView.backgroundColor = [UIColor greenColor];
+    return barView;
 }
 - (void)didReceiveMemoryWarning
 {
@@ -44,5 +61,14 @@
     // Dispose of any resources that can be recreated.
     
 }
+- (NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView
+{
+    return 5;
+}
+- (CGFloat)barChartView:(JBBarChartView *)barChartView heightForBarViewAtAtIndex:(NSUInteger)index
+{
+    return [self.dataArray[index] floatValue];
+}
+
 
 @end
