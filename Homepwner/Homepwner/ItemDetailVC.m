@@ -29,7 +29,6 @@
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     self.data.text=[dateFormatter stringFromDate:[NSDate date]];
-    
 }
 -(void)viewDidLoad
 {
@@ -87,5 +86,13 @@
 }
 - (IBAction)backgroundClick:(id)sender {
     [self.view endEditing:YES];
+}
+-(void)viewDidLayoutSubviews
+{
+    for (UIView *view in self.view.subviews){
+        if([view hasAmbiguousLayout]){
+            NSLog(@"ambiguous:%@",view);
+        }
+    }
 }
 @end

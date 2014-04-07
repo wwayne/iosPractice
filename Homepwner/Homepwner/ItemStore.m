@@ -41,18 +41,18 @@
 -(Item *)addStoreItem{
     Item *item=[Item randomItem];
     [self.privateItemsArray addObject:item];
-    NSLog(@"%@",self.privateItemsArray);
+
     return item;
 }
 -(void)removeStoreItem:(Item *)item{
     [self.privateItemsArray removeObjectIdenticalTo:item];
-    NSLog(@"removing %@",item);
+
 }
 -(void)moveItemPositon:(NSUInteger)from to:(NSUInteger)to
 {
     Item *moveItem=self.privateItemsArray[from];
     [self.privateItemsArray removeObjectAtIndex:from];
     [self.privateItemsArray insertObject:moveItem atIndex:to];
-    NSLog(@"moving finish");
+  
 }
 @end

@@ -38,7 +38,6 @@
 }
 -(void)addImage:(UIImage *)image forKey:(NSString *)key
 {
-    NSLog(@"3");
     [self.dictionary setObject:image forKey:key];
     
 }
