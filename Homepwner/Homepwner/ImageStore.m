@@ -15,10 +15,10 @@
 @implementation ImageStore
 +(instancetype)sharedImage{
     static ImageStore* imageStore=nil;
-    if(!imageStore){
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken,^{
         imageStore=[[ImageStore alloc] initPrivate];
-        
-    }
+    });
     return imageStore;
 }
 -(instancetype)init

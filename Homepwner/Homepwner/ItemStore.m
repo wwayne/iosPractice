@@ -16,9 +16,10 @@
 +(instancetype)sharedStore
 {
     static ItemStore *store=nil;
-    if(!store){
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         store=[[self alloc] initPrivate];
-    }
+    });
     return store;
 }
 -(instancetype)init{
