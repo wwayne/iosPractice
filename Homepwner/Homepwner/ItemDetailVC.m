@@ -33,11 +33,33 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImageView *image=[[UIImageView alloc] initWithImage:nil];
+    image.contentMode=UIViewContentModeScaleAspectFit;
+    image.translatesAutoresizingMaskIntoConstraints=NO;
+    [self.view addSubview:image];
+    self.image=image;
     Item *item=self.item;
     if(item.itemImage){
-       self.image.image=item.itemImage;
+        self.image.image=item.itemImage;
     }
-    
+    [self.image setContentHuggingPriority:200
+                                      forAxis:UILayoutConstraintAxisVertical];
+    [self.image setContentCompressionResistancePriority:700
+                                      forAxis:UILayoutConstraintAxisVertical];
+    NSDictionary *mapView=@{@"image":self.image,
+                            @"label":self.data,
+                            @"toolbar":self.toolBar};
+    NSArray *horizontalConstraint=[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|"
+                                                                          options:0
+                                                                          metrics:nil
+                                                                            views:mapView];
+    NSArray *verticalConstraint=[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-8-[image]-8-[toolbar]"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                       views:mapView];
+
+    [self.view addConstraints:horizontalConstraint];
+    [self.view addConstraints:verticalConstraint];
 }
 -(void)viewWillDisappear:(BOOL)animated
 {

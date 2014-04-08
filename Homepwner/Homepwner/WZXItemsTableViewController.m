@@ -13,6 +13,7 @@
 
 @interface WZXItemsTableViewController ()
 @property (nonatomic,strong)IBOutlet UIView *headerView;
+
 @end
 
 @implementation WZXItemsTableViewController
@@ -49,6 +50,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 -(void)viewWillAppear:(BOOL)animated
 {
