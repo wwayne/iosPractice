@@ -96,7 +96,7 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    ItemDetailVC *detailVC=[[ItemDetailVC alloc] init];
+    ItemDetailVC *detailVC=[[ItemDetailVC alloc] initForBool:NO];
     NSArray *allItems=[[ItemStore sharedStore] allItems];
     detailVC.item=allItems[indexPath.row];
     [self.navigationController pushViewController:detailVC
@@ -119,13 +119,23 @@
     //create new item
     Item *newItem=[[ItemStore sharedStore] addStoreItem];
     //his position
-    NSInteger hisRow=[[[ItemStore sharedStore] allItems] indexOfObject:newItem];
+//    NSInteger hisRow=[[[ItemStore sharedStore] allItems] indexOfObject:newItem];
     //find his indexpath
-    NSIndexPath *newItemPath=[NSIndexPath indexPathForRow:hisRow inSection:0];
+//    NSIndexPath *newItemPath=[NSIndexPath indexPathForRow:hisRow inSection:0];
     //insert into table
     //indexpath include the info of row index and section index
-    [self.tableView insertRowsAtIndexPaths:@[newItemPath] withRowAnimation:UITableViewRowAnimationLeft];
-    
+//    [self.tableView insertRowsAtIndexPaths:@[newItemPath] withRowAnimation:UITableViewRowAnimationLeft];
+    ItemDetailVC *detail=[[ItemDetailVC alloc] initForBool:YES];
+    detail.item=newItem;
+    detail.dismiss=^{
+        [self.tableView reloadData];
+    };
+    UINavigationController *navController=[[UINavigationController alloc] initWithRootViewController:detail];
+    navController.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+    navController.modalPresentationStyle=UIModalPresentationFormSheet;
+    [self presentViewController:navController
+                       animated:YES
+                     completion:nil];
 }
 
 /*
@@ -146,7 +156,8 @@
         Item *removeItem=allItems[indexPath.row];
         [[ItemStore sharedStore] removeStoreItem:removeItem];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }

@@ -11,4 +11,6 @@
 
 @interface ItemDetailVC : UIViewController
 @property (nonatomic,strong) Item *item;
+@property (nonatomic,copy) void (^dismiss)(void);
+-(instancetype)initForBool:(BOOL)modal;
 @end

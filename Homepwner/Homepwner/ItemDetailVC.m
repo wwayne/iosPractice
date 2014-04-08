@@ -9,17 +9,58 @@
 #import "ItemDetailVC.h"
 #import "Item.h"
 #import "ImageStore.h"
+#import "ItemStore.h"
 
-@interface ItemDetailVC ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate>
+@interface ItemDetailVC ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UIPopoverControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *serial;
 @property (weak, nonatomic) IBOutlet UITextField *value;
 @property (weak, nonatomic) IBOutlet UILabel *data;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+@property (strong,nonatomic) UIPopoverController *popover;
 @end
 
 @implementation ItemDetailVC
+-(instancetype)init
+{
+    @throw [NSException exceptionWithName:@"init fail"
+                                   reason:@"you should use initForBool"
+                                 userInfo:nil];
+}
+-(instancetype)initForBool:(BOOL)modal
+{
+    self=[super initWithNibName:nil bundle:nil];
+    if(self){
+        if(modal){
+            UIBarButtonItem *doneButton=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                      target:self
+                                                                                      action:@selector(saveNewItem)];
+            self.navigationItem.rightBarButtonItem=doneButton;
+            UIBarButtonItem *cancelButton=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                        target:self
+                                                                                        action:@selector(cancelButton)];
+            self.navigationItem.leftBarButtonItem=cancelButton;
+        }
+    }
+    return self;
+}
+-(void)saveNewItem
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES
+                                                      completion:self.dismiss];
+    return ;
+}
+-(void)cancelButton
+{
+    ItemStore *itemStore=[ItemStore sharedStore];
+    [itemStore removeStoreItem:self.item];
+    [self.presentingViewController dismissViewControllerAnimated:YES
+                                                       completion:self.dismiss
+     ];
+    return;
+}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     Item *item=self.item;
@@ -29,6 +70,8 @@
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     self.data.text=[dateFormatter stringFromDate:[NSDate date]];
+    UIInterfaceOrientation io=[self interfaceOrientation];
+    [self checkOrientataionAndDevice:io];
 }
 -(void)viewDidLoad
 {
@@ -57,7 +100,6 @@
                                                                         options:0
                                                                         metrics:nil
                                                                        views:mapView];
-
     [self.view addConstraints:horizontalConstraint];
     [self.view addConstraints:verticalConstraint];
 }
@@ -80,7 +122,17 @@
     _item=item;
     self.navigationItem.title=item.itemName;
 }
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    NSLog(@"im being dismissed");
+    self.popover=nil;
+}
 - (IBAction)takePhoto:(id)sender {
+    if([self.popover isPopoverVisible]){
+        [self.popover dismissPopoverAnimated:YES];
+        self.popover=nil;
+        return;
+    }
     UIImagePickerController *imagePC=[[UIImagePickerController alloc] init];
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         imagePC.sourceType=UIImagePickerControllerSourceTypeCamera;
@@ -89,17 +141,31 @@
         imagePC.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
     }
     imagePC.delegate=self;
-    [self presentViewController:imagePC
-                       animated:YES
-                     completion:nil];
+    if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad){
+        self.popover=[[UIPopoverController alloc] initWithContentViewController:imagePC];
+        self.popover.delegate=self;
+        [self.popover presentPopoverFromBarButtonItem:sender
+                                       permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                       animated:YES];
+    }
+    else{
+        [self presentViewController:imagePC
+                           animated:YES
+                         completion:nil];
+    }
 }
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     UIImage *image=info[UIImagePickerControllerOriginalImage];
     self.image.image=image;
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
-    
+    if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad){
+        [self.popover dismissPopoverAnimated:YES];
+        self.popover=nil;
+    }
+    else{
+        [self dismissViewControllerAnimated:YES
+                                 completion:nil];
+    }
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
@@ -116,5 +182,23 @@
             NSLog(@"ambiguous:%@",view);
         }
     }
+}
+-(void)checkOrientataionAndDevice:(UIInterfaceOrientation) orientation
+{
+    if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad){
+        return;
+    }
+    if(UIInterfaceOrientationIsLandscape(orientation)){
+        self.image.hidden=YES;
+        self.cameraButton.enabled=NO;
+    }
+    else{
+        self.image.hidden=NO;
+        self.cameraButton.enabled=YES;
+    }
+}
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self checkOrientataionAndDevice:toInterfaceOrientation];
 }
 @end

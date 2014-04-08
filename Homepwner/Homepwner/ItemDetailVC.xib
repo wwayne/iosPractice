@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemDetailVC">
             <connections>
+                <outlet property="cameraButton" destination="d3d-3r-Rpg" id="1QG-Xk-wbd"/>
                 <outlet property="data" destination="g7f-uS-3Vk" id="anP-wM-gFO"/>
                 <outlet property="name" destination="F9B-js-lb1" id="2Th-bi-nk8"/>
                 <outlet property="serial" destination="INE-vZ-Kn2" id="FRd-QB-Ku1"/>
