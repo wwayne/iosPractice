@@ -33,6 +33,11 @@
     self=[super init];
     if(self){
         self.dictionary=[[NSMutableDictionary alloc] init];
+        NSNotificationCenter *notification=[NSNotificationCenter defaultCenter];
+        [notification addObserver:self
+                         selector:@selector(clearCache)
+                             name:UIApplicationDidReceiveMemoryWarningNotification
+                           object:nil];
     }
     return self;
 }
@@ -78,5 +83,10 @@
     NSArray *documents=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *document=[documents firstObject];
     return [document stringByAppendingPathComponent:key];
+}
+-(void)clearCache
+{
+    [self.dictionary removeAllObjects];
+    NSLog(@"recieve low memory warning so clear the cache");
 }
 @end
