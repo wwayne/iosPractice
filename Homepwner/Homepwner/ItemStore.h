@@ -16,5 +16,5 @@
 -(void)removeStoreItem:(Item *)item;
 -(void)moveItemPositon:(NSUInteger)from to:(NSUInteger)to;
 +(instancetype)sharedStore;
-
+-(BOOL)saveChange;
 @end

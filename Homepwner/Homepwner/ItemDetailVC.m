@@ -64,6 +64,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     Item *item=self.item;
+    NSLog(@"%@",item.uniqueKey);
     self.name.text=item.itemName;
     self.serial.text=item.serialNumber;
     self.value.text=[NSString stringWithFormat:@"%d",item.valueInDollars];
@@ -113,6 +114,7 @@
     item.valueInDollars=[self.value.text intValue];
     if(self.image.image){
         ImageStore *imageStore=[ImageStore sharedImage];
+        //use item.uniqueKey so that item can find corresponding image
         [imageStore addImage:self.image.image
                       forKey:item.uniqueKey];
     }

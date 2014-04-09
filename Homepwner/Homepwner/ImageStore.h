@@ -15,5 +15,5 @@
 -(id)fetchImage:(NSString *)key;
 -(void)deleteImage:(NSString *)key;
 -(NSArray *)getImageArray;
-
+-(NSString *)imageStorePath:(NSString *)key;
 @end

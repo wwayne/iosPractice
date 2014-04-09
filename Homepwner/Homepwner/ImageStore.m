@@ -36,20 +36,47 @@
     }
     return self;
 }
+
 -(void)addImage:(UIImage *)image forKey:(NSString *)key
 {
     [self.dictionary setObject:image forKey:key];
-    
+    NSString *storePath=[self imageStorePath:key];
+    NSData *data=UIImageJPEGRepresentation(image, 0.5);
+    [data writeToFile:storePath atomically:YES];
 }
+
 -(id)fetchImage:(NSString *)key{
-    return[self.dictionary objectForKey:key];
+    UIImage *result=[self.dictionary objectForKey:key];
+    if(!result){
+        NSString *path=[self imageStorePath:key];
+        result=[UIImage imageWithContentsOfFile:path];
+        if(result){
+            self.dictionary[key]=result;
+        }
+        else{
+            NSLog(@"can;t find the image");
+        }
+    }
+    return result;
 }
+
 -(void)deleteImage:(NSString *)key
 {
     [self.dictionary removeObjectForKey:key];
+    NSString *storePath=[self imageStorePath:key];
+    [[NSFileManager defaultManager] removeItemAtPath:storePath
+                                               error:nil];
 }
+
 -(NSArray *)getImageArray
 {
     return [self.dictionary copy];
+}
+//储存image的路径
+-(NSString *)imageStorePath:(NSString *)key
+{
+    NSArray *documents=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *document=[documents firstObject];
+    return [document stringByAppendingPathComponent:key];
 }
 @end

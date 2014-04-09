@@ -32,7 +32,12 @@
 {
     self=[super init];
     if(self){
-        self.privateItemsArray=[[NSMutableArray alloc] init];
+        NSString *path=[self itemPath];
+        self.privateItemsArray=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        
+        if(!self.privateItemsArray){
+            self.privateItemsArray=[[NSMutableArray alloc] init];
+        }
     }
     return self;
 }
@@ -40,7 +45,7 @@
     return [self.privateItemsArray copy];
 }
 -(Item *)addStoreItem{
-    Item *item=[Item randomItem];
+    Item *item=[[Item alloc] init];
     [self.privateItemsArray addObject:item];
 
     return item;
@@ -54,6 +59,16 @@
     Item *moveItem=self.privateItemsArray[from];
     [self.privateItemsArray removeObjectAtIndex:from];
     [self.privateItemsArray insertObject:moveItem atIndex:to];
-  
+}
+-(NSString *)itemPath
+{
+    NSArray *documentDictionary=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *document=[documentDictionary firstObject];
+    return [document stringByAppendingPathComponent:@"items2.0.archive"];
+}
+-(BOOL)saveChange
+{
+    NSString *path=[self itemPath];
+    return [NSKeyedArchiver archiveRootObject:self.privateItemsArray toFile:path];
 }
 @end

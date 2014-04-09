@@ -8,11 +8,15 @@
 
 #import "Item.h"
 #import "ImageStore.h"
-@interface Item()
+@interface Item()<NSCoding>
 
 @end
 
 @implementation Item
+-(instancetype)init{
+    self=[self initWithItemName:@"" valueInDollars:0 serialNumber:@""];
+    return self;
+}
 -(instancetype)initWithItemName:(NSString *)name valueInDollars:(int)value serialNumber:(NSString *)sNumber
 {
     self=[super init];
@@ -21,7 +25,6 @@
         self.valueInDollars=value;
         self.serialNumber=sNumber;
         self.description=[NSString stringWithFormat:@"%@ with %i money",name,value];
-        self.itemImage=NULL;
         self.uniqueKey=[[[NSUUID alloc] init] UUIDString];
     }
     return self;
@@ -46,5 +49,25 @@
     ImageStore *imageStore=[ImageStore sharedImage];
     return [imageStore fetchImage:self.uniqueKey
             ];
+}
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.itemName forKey:@"itemName"];
+    [aCoder encodeInt:self.valueInDollars forKey:@"valueInDollars"];
+    [aCoder encodeObject:self.serialNumber forKey:@"serialNumber"];
+    [aCoder encodeObject:self.description forKey:@"description"];
+    [aCoder encodeObject:self.uniqueKey forKey:@"uniqueKey"];
+}
+-(instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self=[super init];
+    if(self){
+        _itemName=[aDecoder decodeObjectForKey:@"itemName"];
+        _serialNumber=[aDecoder decodeObjectForKey:@"serialNumber"];
+        _description=[aDecoder decodeObjectForKey:@"description"];
+        _uniqueKey=[aDecoder decodeObjectForKey:@"uniqueKey"];
+        _valueInDollars=[aDecoder decodeIntForKey:@"valueInDollars"];
+    }
+    return self;
 }
 @end

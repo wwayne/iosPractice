@@ -21,9 +21,9 @@
 {
     self=[super initWithStyle:UITableViewStylePlain];
     if(self){
-        for(int i=0;i<5;i++){
-            [[ItemStore sharedStore] addStoreItem];
-        }
+//        for(int i=0;i<5;i++){
+//            [[ItemStore sharedStore] addStoreItem];
+//        }
         UINavigationItem *item=self.navigationItem;
         item.title=@"wayne";
         UIBarButtonItem *barButton=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
