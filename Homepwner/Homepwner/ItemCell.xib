@@ -14,15 +14,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ln5-1x-xGQ">
-                        <rect key="frame" x="0.0" y="0.0" width="48" height="43"/>
+                        <rect key="frame" x="0.0" y="2" width="40" height="40"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="43" id="9Ra-L0-e2I"/>
-                            <constraint firstAttribute="width" constant="48" id="ZKI-M6-MJe"/>
+                            <constraint firstAttribute="height" constant="40" id="9Ra-L0-e2I"/>
+                            <constraint firstAttribute="width" constant="40" id="ZKI-M6-MJe"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckS-HN-Kej">
-                        <rect key="frame" x="61" y="2" width="42" height="21"/>
+                        <rect key="frame" x="53" y="2" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -58,6 +58,7 @@
                 <outlet property="itemName" destination="ckS-HN-Kej" id="gEZ-GL-ZL3"/>
                 <outlet property="itemSerial" destination="Qyh-YH-byc" id="kzQ-cL-JRn"/>
                 <outlet property="itemValue" destination="xTm-aI-Bb8" id="hsD-LO-crd"/>
+                <outlet property="thumbImage" destination="ln5-1x-xGQ" id="vYz-d8-64J"/>
             </connections>
         </tableViewCell>
     </objects>

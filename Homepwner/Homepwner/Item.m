@@ -50,6 +50,9 @@
     return [imageStore fetchImage:self.uniqueKey
             ];
 }
+-(void)setThumbNail:(UIImage *)thumbNail{
+    
+}
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.itemName forKey:@"itemName"];
@@ -57,6 +60,7 @@
     [aCoder encodeObject:self.serialNumber forKey:@"serialNumber"];
     [aCoder encodeObject:self.description forKey:@"description"];
     [aCoder encodeObject:self.uniqueKey forKey:@"uniqueKey"];
+    [aCoder encodeObject:self.thumbNail forKey:@"thumbNail"];
 }
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -67,6 +71,7 @@
         _description=[aDecoder decodeObjectForKey:@"description"];
         _uniqueKey=[aDecoder decodeObjectForKey:@"uniqueKey"];
         _valueInDollars=[aDecoder decodeIntForKey:@"valueInDollars"];
+        _thumbNail=[aDecoder decodeObjectForKey:@"thumbNail"];
     }
     return self;
 }

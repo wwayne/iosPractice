@@ -12,7 +12,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *itemName;
 @property (weak, nonatomic) IBOutlet UILabel *itemSerial;
 @property (weak, nonatomic) IBOutlet UILabel *itemValue;
-
-
-
+@property (weak, nonatomic) IBOutlet UIImageView *thumbImage;
 @end
