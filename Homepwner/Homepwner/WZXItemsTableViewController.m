@@ -10,6 +10,7 @@
 #import "Item.h"
 #import "ItemStore.h"
 #import "ItemDetailVC.h"
+#import "ItemCell.h"
 
 @interface WZXItemsTableViewController ()
 @property (nonatomic,strong)IBOutlet UIView *headerView;
@@ -42,7 +43,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseCell"];
+    //注册cell，让table在初始化cell的时候知道去找那种样子的cell
+//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseCell"];
+    UINib *itemCell=[UINib nibWithNibName:@"ItemCell" bundle:nil];
+    [self.tableView registerNib:itemCell
+         forCellReuseIdentifier:@"reuseCell"];
+    
 //    UIView *header=self.headerView;
 //    [self.tableView setTableHeaderView:header];
     // Uncomment the following line to preserve selection between presentations.
@@ -86,12 +92,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"reuseCell" forIndexPath:indexPath];
+    //设置cell的内容
+//    UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"reuseCell" forIndexPath:indexPath];
+    ItemCell *cell=[tableView dequeueReusableCellWithIdentifier:@"reuseCell"
+                                                   forIndexPath:indexPath];
     NSArray *allItems=[[ItemStore sharedStore] allItems];
-    
-    cell.textLabel.text=[allItems[indexPath.row] description];
-    
-    // Configure th
+    Item *item=allItems[indexPath.row];
+//    cell.textLabel.text=[item description];
+//    cell.itemImage.image=item.itemImage;
+    cell.itemName.text=item.itemName;
+    cell.itemSerial.text=item.serialNumber;
+    cell.itemValue.text=[NSString stringWithFormat:@"%d",item.valueInDollars];
     
     return cell;
 }

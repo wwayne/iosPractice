@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0AB642F2-FBAE-4137-90DD-9C75336E59BB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HomePwner</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1A9ABA81-CD77-4A7F-9C2C-D0EC4FC0E598</key>
+		<string>https://github.com/pptalent/iosPractice.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Solutions/19-SubclassUITableViewCell/HomePwner/HomePwner.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1A9ABA81-CD77-4A7F-9C2C-D0EC4FC0E598</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/pptalent/iosPractice.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1A9ABA81-CD77-4A7F-9C2C-D0EC4FC0E598</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1A9ABA81-CD77-4A7F-9C2C-D0EC4FC0E598</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iosPractice</string>
+		</dict>
+	</array>
+</dict>
+</plist>
