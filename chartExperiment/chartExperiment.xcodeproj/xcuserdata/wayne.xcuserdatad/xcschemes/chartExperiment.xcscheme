@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B098890518E529460046ECC0"
-               BuildableName = "ChartExperiment.app"
-               BlueprintName = "ChartExperiment"
-               ReferencedContainer = "container:ChartExperiment.xcodeproj">
+               BlueprintIdentifier = "B06EF1F618F6341600CF0B11"
+               BuildableName = "chartExperiment.app"
+               BlueprintName = "chartExperiment"
+               ReferencedContainer = "container:chartExperiment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B098892018E529460046ECC0"
-               BuildableName = "ChartExperimentTests.xctest"
-               BlueprintName = "ChartExperimentTests"
-               ReferencedContainer = "container:ChartExperiment.xcodeproj">
+               BlueprintIdentifier = "B06EF21118F6341600CF0B11"
+               BuildableName = "chartExperimentTests.xctest"
+               BlueprintName = "chartExperimentTests"
+               ReferencedContainer = "container:chartExperiment.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B098890518E529460046ECC0"
-            BuildableName = "ChartExperiment.app"
-            BlueprintName = "ChartExperiment"
-            ReferencedContainer = "container:ChartExperiment.xcodeproj">
+            BlueprintIdentifier = "B06EF1F618F6341600CF0B11"
+            BuildableName = "chartExperiment.app"
+            BlueprintName = "chartExperiment"
+            ReferencedContainer = "container:chartExperiment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B098890518E529460046ECC0"
-            BuildableName = "ChartExperiment.app"
-            BlueprintName = "ChartExperiment"
-            ReferencedContainer = "container:ChartExperiment.xcodeproj">
+            BlueprintIdentifier = "B06EF1F618F6341600CF0B11"
+            BuildableName = "chartExperiment.app"
+            BlueprintName = "chartExperiment"
+            ReferencedContainer = "container:chartExperiment.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B098890518E529460046ECC0"
-            BuildableName = "ChartExperiment.app"
-            BlueprintName = "ChartExperiment"
-            ReferencedContainer = "container:ChartExperiment.xcodeproj">
+            BlueprintIdentifier = "B06EF1F618F6341600CF0B11"
+            BuildableName = "chartExperiment.app"
+            BlueprintName = "chartExperiment"
+            ReferencedContainer = "container:chartExperiment.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

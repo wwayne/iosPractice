@@ -1,25 +1,24 @@
 //
-//  wzxAppDelegate.m
-//  ChartExperiment
+//  CEAppDelegate.m
+//  chartExperiment
 //
-//  Created by wayne on 14-3-28.
-//  Copyright (c) 2014年 wayne. All rights reserved.
+//  Created by wayne on 14-4-10.
+//  Copyright (c) 2014年 brilliantech. All rights reserved.
 //
 
-#import "wzxAppDelegate.h"
-#import "JBChartVCViewController.h"
+#import "CEAppDelegate.h"
+#import "BarChartViewController.h"
 
-@implementation wzxAppDelegate
+@implementation CEAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    JBChartVCViewController *jbchart=[[JBChartVCViewController alloc] init];
-    self.window.rootViewController=jbchart;
     [self.window makeKeyAndVisible];
-    
+    BarChartViewController *bar=[[BarChartViewController alloc] init];
+    self.window.rootViewController=bar;
     return YES;
 }
 

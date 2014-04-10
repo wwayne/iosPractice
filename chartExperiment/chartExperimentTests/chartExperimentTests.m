@@ -1,18 +1,18 @@
 //
-//  ChartExperimentTests.m
-//  ChartExperimentTests
+//  chartExperimentTests.m
+//  chartExperimentTests
 //
-//  Created by wayne on 14-3-28.
-//  Copyright (c) 2014年 wayne. All rights reserved.
+//  Created by wayne on 14-4-10.
+//  Copyright (c) 2014年 brilliantech. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface ChartExperimentTests : XCTestCase
+@interface chartExperimentTests : XCTestCase
 
 @end
 
-@implementation ChartExperimentTests
+@implementation chartExperimentTests
 
 - (void)setUp
 {

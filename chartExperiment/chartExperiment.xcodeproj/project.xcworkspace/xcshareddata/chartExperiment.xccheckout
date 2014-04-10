@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3040B85B-B438-40CF-9675-5B4D5CC2EE02</string>
+	<string>FACD3AA7-C005-4FC3-AA60-1C85290EA6AB</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ChartExperiment</string>
+	<string>chartExperiment</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1A9ABA81-CD77-4A7F-9C2C-D0EC4FC0E598</key>
 		<string>https://github.com/pptalent/iosPractice.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ChartExperiment/ChartExperiment.xcodeproj/project.xcworkspace</string>
+	<string>chartExperiment/chartExperiment.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1A9ABA81-CD77-4A7F-9C2C-D0EC4FC0E598</key>
