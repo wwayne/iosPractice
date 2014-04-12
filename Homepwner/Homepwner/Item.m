@@ -50,8 +50,24 @@
     return [imageStore fetchImage:self.uniqueKey
             ];
 }
--(void)setThumbNail:(UIImage *)thumbNail{
+-(void)setThumbNailFromImage:(UIImage *)originImage{
+    CGSize originSize=originImage.size;
+    CGRect newRect=CGRectMake(0,0,40,40);
+    CGFloat ratio=MIN(originSize.width/newRect.size.width,originSize.height/newRect.size.height);
+    UIGraphicsBeginImageContextWithOptions(newRect.size, NO, 0);
+    UIBezierPath *path=[UIBezierPath bezierPathWithRoundedRect:newRect
+                                                  cornerRadius:5.0];
+    [path addClip];
     
+    CGRect pathRect;
+    pathRect.size=CGSizeMake(originSize.width/ratio, originSize.height/ratio);
+    pathRect.origin=CGPointMake((newRect.size.width-pathRect.size.width)/2.0, (newRect.size.height-pathRect.size.height)/2.0);
+    [originImage drawInRect:pathRect];
+   
+    UIImage *smallImage=UIGraphicsGetImageFromCurrentImageContext();
+    self.thumbNail=smallImage;
+    
+    UIGraphicsEndImageContext();
 }
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {

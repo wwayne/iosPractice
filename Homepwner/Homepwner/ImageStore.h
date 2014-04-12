@@ -14,6 +14,6 @@
 -(void)addImage:(UIImage *)image forKey:(NSString *)key;
 -(id)fetchImage:(NSString *)key;
 -(void)deleteImage:(NSString *)key;
--(NSArray *)getImageArray;
+-(NSDictionary *)getImageArray;
 -(NSString *)imageStorePath:(NSString *)key;
 @end

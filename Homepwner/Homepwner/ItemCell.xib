@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ln5-1x-xGQ">
-                        <rect key="frame" x="0.0" y="2" width="40" height="40"/>
+                        <rect key="frame" x="8" y="2" width="40" height="40"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="9Ra-L0-e2I"/>
@@ -22,7 +22,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckS-HN-Kej">
-                        <rect key="frame" x="53" y="2" width="42" height="21"/>
+                        <rect key="frame" x="61" y="2" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -42,15 +42,29 @@
                         <color key="textColor" red="0.57158801020000005" green="0.57158801020000005" blue="0.57158801020000005" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfY-PG-Ak6">
+                        <rect key="frame" x="8" y="2" width="40" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="tapImage:" destination="byD-B8-Ut7" eventType="touchUpInside" id="GX3-xc-Kdq"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="xTm-aI-Bb8" secondAttribute="trailing" constant="11" id="48G-Mt-EoX"/>
                     <constraint firstItem="ckS-HN-Kej" firstAttribute="leading" secondItem="ln5-1x-xGQ" secondAttribute="trailing" constant="13" id="DWh-vk-lsa"/>
                     <constraint firstItem="ckS-HN-Kej" firstAttribute="top" secondItem="Ysj-WN-OhC" secondAttribute="top" constant="2" id="E0w-R6-Xxy"/>
+                    <constraint firstItem="xfY-PG-Ak6" firstAttribute="bottom" secondItem="ln5-1x-xGQ" secondAttribute="bottom" id="Efd-YV-1Ll"/>
                     <constraint firstItem="Qyh-YH-byc" firstAttribute="leading" secondItem="ln5-1x-xGQ" secondAttribute="trailing" constant="13" id="Fb5-cy-Y1o"/>
+                    <constraint firstItem="xfY-PG-Ak6" firstAttribute="trailing" secondItem="ln5-1x-xGQ" secondAttribute="trailing" id="Xdg-de-PaN"/>
                     <constraint firstItem="Qyh-YH-byc" firstAttribute="top" secondItem="Ysj-WN-OhC" secondAttribute="top" constant="22" id="YWd-B7-IA0"/>
-                    <constraint firstItem="ln5-1x-xGQ" firstAttribute="leading" secondItem="Ysj-WN-OhC" secondAttribute="leading" id="bWO-KM-g98"/>
+                    <constraint firstItem="xfY-PG-Ak6" firstAttribute="top" secondItem="ln5-1x-xGQ" secondAttribute="top" id="aal-L6-xXf"/>
+                    <constraint firstItem="ln5-1x-xGQ" firstAttribute="leading" secondItem="Ysj-WN-OhC" secondAttribute="leading" constant="8" id="bWO-KM-g98"/>
                     <constraint firstAttribute="centerY" secondItem="xTm-aI-Bb8" secondAttribute="centerY" id="d1S-F2-W9E"/>
+                    <constraint firstItem="xfY-PG-Ak6" firstAttribute="leading" secondItem="ln5-1x-xGQ" secondAttribute="leading" id="ftM-Dg-D4s"/>
                     <constraint firstAttribute="centerY" secondItem="ln5-1x-xGQ" secondAttribute="centerY" id="knW-uR-q80"/>
                 </constraints>
             </tableViewCellContentView>

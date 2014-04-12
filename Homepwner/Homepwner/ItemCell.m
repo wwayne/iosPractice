@@ -21,5 +21,10 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)tapImage:(id)sender {
+    if(self.tapButton){
+        self.tapButton();
+    }
+}
 
 @end

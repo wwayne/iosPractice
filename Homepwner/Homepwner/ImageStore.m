@@ -72,8 +72,8 @@
     [[NSFileManager defaultManager] removeItemAtPath:storePath
                                                error:nil];
 }
-
--(NSArray *)getImageArray
+//外界得到image array的方法
+-(NSDictionary *)getImageArray
 {
     return [self.dictionary copy];
 }

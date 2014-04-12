@@ -160,6 +160,7 @@
     
     UIImage *image=info[UIImagePickerControllerOriginalImage];
     self.image.image=image;
+    [self.item setThumbNailFromImage:image];
     if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad){
         [self.popover dismissPopoverAnimated:YES];
         self.popover=nil;

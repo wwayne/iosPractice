@@ -14,11 +14,13 @@
 @property (nonatomic,copy)NSString *description;
 @property int valueInDollars;
 @property (nonatomic,copy)UIImage *itemImage;
-@property (nonatomic,copy)UIImage *thumbNail;
+@property (nonatomic,strong)UIImage *thumbNail;
 @property (nonatomic,strong)NSString *uniqueKey;
 +(instancetype)randomItem;
 -(instancetype)initWithItemName:(NSString *)name
                  valueInDollars:(int)value
                    serialNumber:(NSString *)sNumber;
 -(instancetype)initWithItemName:(NSString *)name;
+-(void)setThumbNailFromImage:(UIImage *)image;
+
 @end

@@ -10,11 +10,13 @@
 #import "Item.h"
 #import "ItemStore.h"
 #import "ItemDetailVC.h"
+#import "ImagePopoverViewController.h"
+#import "ImageStore.h"
 #import "ItemCell.h"
 
-@interface WZXItemsTableViewController ()
+@interface WZXItemsTableViewController ()<UIPopoverControllerDelegate>
 @property (nonatomic,strong)IBOutlet UIView *headerView;
-
+@property (nonatomic,strong) UIPopoverController *popController;
 @end
 
 @implementation WZXItemsTableViewController
@@ -103,8 +105,36 @@
     cell.itemName.text=item.itemName;
     cell.itemSerial.text=item.serialNumber;
     cell.itemValue.text=[NSString stringWithFormat:@"%d",item.valueInDollars];
+    cell.thumbImage.image=item.thumbNail;
+    //give the block a weak reference to the cell
+    __weak ItemCell *weakCell=cell;
+    cell.tapButton=^(){
+        if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad)
+        {
+            NSDictionary *imageDictionary=[[ImageStore sharedImage] getImageArray];
+            UIImage *image=[imageDictionary objectForKey:item.uniqueKey];
+            if(!image){
+                return ;
+            }
+            //covert the thumbnail frame to the tableview frame
+            //so that the popover next know where to triger
+            CGRect rect=[self.view convertRect:weakCell.thumbImage.bounds fromView:weakCell.thumbImage];
+            ImagePopoverViewController *popover=[[ImagePopoverViewController alloc] init];
+            popover.image=image;
+            self.popController=[[UIPopoverController alloc] initWithContentViewController:popover];
+            self.popController.delegate=self;
+            self.popController.popoverContentSize=CGSizeMake(350, 430);
+            [self.popController presentPopoverFromRect:rect
+                                                inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        }
+        
     
+    };
     return cell;
+}
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.popController=nil;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ItemDetailVC *detailVC=[[ItemDetailVC alloc] initForBool:NO];
