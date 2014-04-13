@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 @property (strong,nonatomic) UIPopoverController *popover;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *serialLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
 @end
 
 @implementation ItemDetailVC
@@ -43,8 +46,17 @@
                                                                                         action:@selector(cancelButton)];
             self.navigationItem.leftBarButtonItem=cancelButton;
         }
+        NSNotificationCenter *defaultCenter=[NSNotificationCenter defaultCenter];
+        [defaultCenter addObserver:self
+                          selector:@selector(updateFont)
+                              name:UIContentSizeCategoryDidChangeNotification
+                            object:nil];
     }
     return self;
+}
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 -(void)saveNewItem
 {
@@ -64,7 +76,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     Item *item=self.item;
-    NSLog(@"%@",item.uniqueKey);
+   
     self.name.text=item.itemName;
     self.serial.text=item.serialNumber;
     self.value.text=[NSString stringWithFormat:@"%d",item.valueInDollars];
@@ -73,6 +85,7 @@
     self.data.text=[dateFormatter stringFromDate:[NSDate date]];
     UIInterfaceOrientation io=[self interfaceOrientation];
     [self checkOrientataionAndDevice:io];
+    [self updateFont];
 }
 -(void)viewDidLoad
 {
@@ -203,5 +216,18 @@
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [self checkOrientataionAndDevice:toInterfaceOrientation];
+}
+//dynamic font size
+-(void)updateFont
+{
+    UIFont *font=[UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    self.name.font=font;
+    self.serial.font=font;
+    self.value.font=font;
+    self.data.font=font;
+    
+    self.nameLabel.font=font;
+    self.serialLabel.font=font;
+    self.valueLabel.font=font;
 }
 @end

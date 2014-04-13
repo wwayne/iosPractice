@@ -1,27 +1,28 @@
 //
-//  WZXAppDelegate.m
-//  Homepwner
+//  NerdAppDelegate.m
+//  Nerdcourse
 //
-//  Created by wayne on 14-3-24.
+//  Created by wayne on 14-4-13.
 //  Copyright (c) 2014年 wayne. All rights reserved.
 //
 
-#import "WZXAppDelegate.h"
-#import "ItemStore.h"
-#import "WZXItemsTableViewController.h"
+#import "NerdAppDelegate.h"
+#import "WebViewController.h"
+#import "CourseTableViewController.h"
 
-@implementation WZXAppDelegate
+@implementation NerdAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    WZXItemsTableViewController *tableVC=[[WZXItemsTableViewController alloc] init];
-    UINavigationController *navigation=[[UINavigationController alloc] initWithRootViewController:tableVC];
-    self.window.rootViewController=navigation;
-    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    WebViewController *webViewController=[[WebViewController alloc] init];
+    CourseTableViewController *course=[[CourseTableViewController alloc] init];
+    course.webVC=webViewController;
+    UINavigationController *navigation=[[UINavigationController alloc] initWithRootViewController:course];
+    self.window.rootViewController=navigation;
     return YES;
 }
 
@@ -33,14 +34,6 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    ItemStore *itemStore=[ItemStore sharedStore];
-    BOOL success=[itemStore saveChange];
-    if(success){
-//        NSLog(@"save success");
-    }
-    else{
-        NSLog(@"fail");
-    }
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }

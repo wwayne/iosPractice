@@ -34,8 +34,18 @@
                                                                                  action:@selector(addNewItem:)];
         item.leftBarButtonItem=barButton;
         item.rightBarButtonItem=self.editButtonItem;
+        NSNotificationCenter *defaultCenter=[NSNotificationCenter defaultCenter];
+        [self updateTableSize];
+        [defaultCenter addObserver:self
+                          selector:@selector(updateTableSize)
+                              name:UIContentSizeCategoryDidChangeNotification
+                            object:nil];
     }
     return self;
+}
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -123,7 +133,7 @@
             popover.image=image;
             self.popController=[[UIPopoverController alloc] initWithContentViewController:popover];
             self.popController.delegate=self;
-            self.popController.popoverContentSize=CGSizeMake(350, 430);
+            self.popController.popoverContentSize=CGSizeMake(400,400);
             [self.popController presentPopoverFromRect:rect
                                                 inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         }
@@ -230,5 +240,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - update size
+-(void)updateTableSize
+{
+    static NSDictionary *sizeDictionary;
+    if(!sizeDictionary){
+        sizeDictionary=@{
+                         UIContentSizeCategoryExtraSmall:@44,
+                         UIContentSizeCategorySmall:@44,
+                         UIContentSizeCategoryMedium:@44,
+                         UIContentSizeCategoryLarge:@44,
+                         UIContentSizeCategoryExtraLarge:@55,
+                         UIContentSizeCategoryExtraExtraLarge:@65,
+                         UIContentSizeCategoryExtraExtraExtraLarge:@75
+        };
+    }
+    
+    NSString *userSize=[[UIApplication sharedApplication] preferredContentSizeCategory];
+    NSNumber *rowHeight=sizeDictionary[userSize];
+    [self.tableView setRowHeight:[rowHeight floatValue]];
+    [self.tableView reloadData];
+}
 
 @end

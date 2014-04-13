@@ -51,8 +51,23 @@
             ];
 }
 -(void)setThumbNailFromImage:(UIImage *)originImage{
+    static NSDictionary *sizeDictionary;
+    if(!sizeDictionary){
+        sizeDictionary=@{
+                         UIContentSizeCategoryExtraSmall:@40,
+                         UIContentSizeCategorySmall:@40,
+                         UIContentSizeCategoryMedium:@40,
+                         UIContentSizeCategoryLarge:@40,
+                         UIContentSizeCategoryExtraLarge:@50,
+                         UIContentSizeCategoryExtraExtraLarge:@60,
+                         UIContentSizeCategoryExtraExtraExtraLarge:@70
+                         };
+    }
+    NSString *userChoose=[[UIApplication sharedApplication] preferredContentSizeCategory];
+    NSNumber *size=sizeDictionary[userChoose];
+    
     CGSize originSize=originImage.size;
-    CGRect newRect=CGRectMake(0,0,40,40);
+    CGRect newRect=CGRectMake(0,0,[size floatValue],[size floatValue]);
     CGFloat ratio=MIN(originSize.width/newRect.size.width,originSize.height/newRect.size.height);
     UIGraphicsBeginImageContextWithOptions(newRect.size, NO, 0);
     UIBezierPath *path=[UIBezierPath bezierPathWithRoundedRect:newRect
