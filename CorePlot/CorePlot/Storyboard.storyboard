@@ -15,9 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="Mal-O0-ATT">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVY-Iq-2qc">
+                                <rect key="frame" x="0.0" y="20" width="768" height="500"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.33887431569999998" green="0.72593521900000002" blue="0.37537066610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="4mO-UW-lPQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QVY-Iq-2qc" secondAttribute="trailing" id="R0n-eV-vom"/>
+                            <constraint firstItem="QVY-Iq-2qc" firstAttribute="leading" secondItem="Mal-O0-ATT" secondAttribute="leading" id="qf2-ah-0yA"/>
+                            <constraint firstItem="QVY-Iq-2qc" firstAttribute="top" secondItem="y2z-FD-gvx" secondAttribute="bottom" id="xWH-dW-cST"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Line" id="ZvL-KZ-wF2"/>
+                    <connections>
+                        <outlet property="hostView" destination="QVY-Iq-2qc" id="Uiv-PX-and"/>
+                        <outlet property="hostViewHeight" destination="4mO-UW-lPQ" id="v6x-Aw-HRW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oad-hG-ccu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="-1068" y="89"/>
         </scene>
-        <!--Column View Controller - Column-->
+        <!--View Controller - Column-->
         <scene sceneID="gOG-AS-Yi9">
             <objects>
-                <viewController id="c6D-ok-Xlb" customClass="ColumnViewController" sceneMemberID="viewController">
+                <viewController id="c6D-ok-Xlb" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SSB-lE-Xbc"/>
                         <viewControllerLayoutGuide type="bottom" id="j5b-gx-2R2"/>
@@ -60,6 +79,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDz-Iv-LgO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="70" y="691"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oR1-20-wag">
+            <objects>
+                <viewController id="Nsb-U1-P4e" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tv0-f6-waF"/>
+                        <viewControllerLayoutGuide type="bottom" id="bhO-Md-z2t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EFC-vx-yhd">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4y-Pm-w1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
