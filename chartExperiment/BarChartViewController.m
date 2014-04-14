@@ -41,7 +41,7 @@
 }
 -(NSUInteger)numberOfBarsInBarChartView:(JBBarChartView *)barChartView
 {
-    return 31;
+    return 331;
 }
 - (UIColor *)barSelectionColorForBarChartView:(JBBarChartView *)barChartView
 {
