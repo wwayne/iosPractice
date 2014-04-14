@@ -30,6 +30,6 @@
 *.swp
 *.MERGE_MSG
 *.xcuserstate
-
+.xcuserstate
 #~
 ~#
