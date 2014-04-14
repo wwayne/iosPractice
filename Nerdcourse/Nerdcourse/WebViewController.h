@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController
+@interface WebViewController : UIViewController<UISplitViewControllerDelegate>
 @property (nonatomic,strong) NSURL *url;
 @end

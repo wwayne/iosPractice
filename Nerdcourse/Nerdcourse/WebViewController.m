@@ -48,7 +48,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    if(barButtonItem==self.navigationItem.leftBarButtonItem)
+    {
+        self.navigationItem.leftBarButtonItem=nil;
+    }
+}
+-(void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title=@"Course";
+    self.navigationItem.leftBarButtonItem=barButtonItem;
+}
 /*
 #pragma mark - Navigation
 

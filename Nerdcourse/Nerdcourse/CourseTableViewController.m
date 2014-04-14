@@ -32,6 +32,7 @@
     }
     return self;
 }
+
 -(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler
 {
     NSURLCredential *credential=[NSURLCredential credentialWithUser:@"BigNerdRanch"
@@ -105,7 +106,10 @@
     NSURL *url=[NSURL URLWithString:course[@"url"]];
     self.webVC.url=url;
     self.webVC.title=course[@"title"];
-    [self.navigationController pushViewController:self.webVC animated:YES];
+    if(![self splitViewController]){
+       [self.navigationController pushViewController:self.webVC animated:YES];
+    }
+    
 }
 /*
 // Override to support conditional editing of the table view.

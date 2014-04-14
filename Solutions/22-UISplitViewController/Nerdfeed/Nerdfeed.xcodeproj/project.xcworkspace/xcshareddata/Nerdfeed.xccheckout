@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C0FF2E42-5D9A-4CDB-A96A-FD213BB5FA96</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Nerdfeed</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>24A10917-F152-40B3-8DD4-D3CEE09D44AF</key>
+		<string>https://github.com/pptalent/iosPractice.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Solutions/22-UISplitViewController/Nerdfeed/Nerdfeed.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>24A10917-F152-40B3-8DD4-D3CEE09D44AF</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/pptalent/iosPractice.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>24A10917-F152-40B3-8DD4-D3CEE09D44AF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>24A10917-F152-40B3-8DD4-D3CEE09D44AF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iosPractice</string>
+		</dict>
+	</array>
+</dict>
+</plist>

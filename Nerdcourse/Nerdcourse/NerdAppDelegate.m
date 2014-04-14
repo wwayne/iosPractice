@@ -21,8 +21,18 @@
     WebViewController *webViewController=[[WebViewController alloc] init];
     CourseTableViewController *course=[[CourseTableViewController alloc] init];
     course.webVC=webViewController;
-    UINavigationController *navigation=[[UINavigationController alloc] initWithRootViewController:course];
-    self.window.rootViewController=navigation;
+    UINavigationController *master=[[UINavigationController alloc] initWithRootViewController:course];
+    
+    if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad){
+        UINavigationController *detail=[[UINavigationController alloc] initWithRootViewController:webViewController];
+        UISplitViewController *split=[[UISplitViewController alloc] init];
+        split.delegate=webViewController;
+        split.viewControllers=@[master,detail];
+        self.window.rootViewController=split;
+    }
+    else{
+        self.window.rootViewController=master;
+    }
     return YES;
 }
 
