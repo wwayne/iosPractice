@@ -20,10 +20,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.tabBarItem.title=@"Hypnosis";
-        self.tabBarItem.image=[UIImage imageNamed:@"Hypno"];
+        self.tabBarItem=[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0];
     }
     return self;
+    
 }
 -(void)loadView
 {

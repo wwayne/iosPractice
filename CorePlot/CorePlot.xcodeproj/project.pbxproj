@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B07CB5D618FB9BCC00B29B18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07CB5D518FB9BCC00B29B18 /* Foundation.framework */; };
+		B07CB5D818FB9BCC00B29B18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07CB5D718FB9BCC00B29B18 /* CoreGraphics.framework */; };
+		B07CB5DA18FB9BCC00B29B18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07CB5D918FB9BCC00B29B18 /* UIKit.framework */; };
+		B07CB5E018FB9BCC00B29B18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B07CB5DE18FB9BCC00B29B18 /* InfoPlist.strings */; };
+		B07CB5E218FB9BCC00B29B18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B07CB5E118FB9BCC00B29B18 /* main.m */; };
+		B07CB5E618FB9BCC00B29B18 /* CPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B07CB5E518FB9BCC00B29B18 /* CPAppDelegate.m */; };
+		B07CB5E818FB9BCC00B29B18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07CB5E718FB9BCC00B29B18 /* Images.xcassets */; };
+		B07CB5EF18FB9BCC00B29B18 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07CB5EE18FB9BCC00B29B18 /* XCTest.framework */; };
+		B07CB5F018FB9BCC00B29B18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07CB5D518FB9BCC00B29B18 /* Foundation.framework */; };
+		B07CB5F118FB9BCC00B29B18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07CB5D918FB9BCC00B29B18 /* UIKit.framework */; };
+		B07CB5F918FB9BCC00B29B18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B07CB5F718FB9BCC00B29B18 /* InfoPlist.strings */; };
+		B07CB5FB18FB9BCC00B29B18 /* CorePlotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B07CB5FA18FB9BCC00B29B18 /* CorePlotTests.m */; };
+		B07CB60518FB9C1100B29B18 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07CB60418FB9C1100B29B18 /* Storyboard.storyboard */; };
+		B07CB65818FB9CFF00B29B18 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07CB65718FB9CFF00B29B18 /* Accelerate.framework */; };
+		B07CB65A18FB9D0900B29B18 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07CB65918FB9D0900B29B18 /* QuartzCore.framework */; };
+		B07CB66B18FBBC5200B29B18 /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07CB66A18FBBC5200B29B18 /* LineViewController.m */; };
+		B07CB66E18FBBC5D00B29B18 /* ColumnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07CB66D18FBBC5D00B29B18 /* ColumnViewController.m */; };
+		B07CB67918FBBD4300B29B18 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B07CB67618FBBD3300B29B18 /* libCorePlot-CocoaTouch.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B07CB5F218FB9BCC00B29B18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B07CB5CA18FB9BCC00B29B18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B07CB5D118FB9BCC00B29B18;
+			remoteInfo = CorePlot;
+		};
+		B07CB67518FBBD3300B29B18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B07CB66F18FBBD3300B29B18 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		B07CB67718FBBD3E00B29B18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B07CB66F18FBBD3300B29B18 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B07CB5D218FB9BCC00B29B18 /* CorePlot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CorePlot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B07CB5D518FB9BCC00B29B18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B07CB5D718FB9BCC00B29B18 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B07CB5D918FB9BCC00B29B18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B07CB5DD18FB9BCC00B29B18 /* CorePlot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CorePlot-Info.plist"; sourceTree = "<group>"; };
+		B07CB5DF18FB9BCC00B29B18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B07CB5E118FB9BCC00B29B18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B07CB5E318FB9BCC00B29B18 /* CorePlot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CorePlot-Prefix.pch"; sourceTree = "<group>"; };
+		B07CB5E418FB9BCC00B29B18 /* CPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPAppDelegate.h; sourceTree = "<group>"; };
+		B07CB5E518FB9BCC00B29B18 /* CPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPAppDelegate.m; sourceTree = "<group>"; };
+		B07CB5E718FB9BCC00B29B18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B07CB5ED18FB9BCC00B29B18 /* CorePlotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CorePlotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B07CB5EE18FB9BCC00B29B18 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B07CB5F618FB9BCC00B29B18 /* CorePlotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CorePlotTests-Info.plist"; sourceTree = "<group>"; };
+		B07CB5F818FB9BCC00B29B18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B07CB5FA18FB9BCC00B29B18 /* CorePlotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CorePlotTests.m; sourceTree = "<group>"; };
+		B07CB60418FB9C1100B29B18 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		B07CB65718FB9CFF00B29B18 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		B07CB65918FB9D0900B29B18 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B07CB66918FBBC5200B29B18 /* LineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineViewController.h; sourceTree = "<group>"; };
+		B07CB66A18FBBC5200B29B18 /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
+		B07CB66C18FBBC5D00B29B18 /* ColumnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnViewController.h; sourceTree = "<group>"; };
+		B07CB66D18FBBC5D00B29B18 /* ColumnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnViewController.m; sourceTree = "<group>"; };
+		B07CB66F18FBBD3300B29B18 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B07CB5CF18FB9BCC00B29B18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B07CB67918FBBD4300B29B18 /* libCorePlot-CocoaTouch.a in Frameworks */,
+				B07CB65A18FB9D0900B29B18 /* QuartzCore.framework in Frameworks */,
+				B07CB65818FB9CFF00B29B18 /* Accelerate.framework in Frameworks */,
+				B07CB5D818FB9BCC00B29B18 /* CoreGraphics.framework in Frameworks */,
+				B07CB5DA18FB9BCC00B29B18 /* UIKit.framework in Frameworks */,
+				B07CB5D618FB9BCC00B29B18 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B07CB5EA18FB9BCC00B29B18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B07CB5EF18FB9BCC00B29B18 /* XCTest.framework in Frameworks */,
+				B07CB5F118FB9BCC00B29B18 /* UIKit.framework in Frameworks */,
+				B07CB5F018FB9BCC00B29B18 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B07CB5C918FB9BCC00B29B18 = {
+			isa = PBXGroup;
+			children = (
+				B07CB5DB18FB9BCC00B29B18 /* CorePlot */,
+				B07CB5F418FB9BCC00B29B18 /* CorePlotTests */,
+				B07CB5D418FB9BCC00B29B18 /* Frameworks */,
+				B07CB5D318FB9BCC00B29B18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B07CB5D318FB9BCC00B29B18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B07CB5D218FB9BCC00B29B18 /* CorePlot.app */,
+				B07CB5ED18FB9BCC00B29B18 /* CorePlotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B07CB5D418FB9BCC00B29B18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B07CB65918FB9D0900B29B18 /* QuartzCore.framework */,
+				B07CB65718FB9CFF00B29B18 /* Accelerate.framework */,
+				B07CB5D518FB9BCC00B29B18 /* Foundation.framework */,
+				B07CB5D718FB9BCC00B29B18 /* CoreGraphics.framework */,
+				B07CB5D918FB9BCC00B29B18 /* UIKit.framework */,
+				B07CB5EE18FB9BCC00B29B18 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B07CB5DB18FB9BCC00B29B18 /* CorePlot */ = {
+			isa = PBXGroup;
+			children = (
+				B07CB66F18FBBD3300B29B18 /* CorePlot-CocoaTouch.xcodeproj */,
+				B07CB5E418FB9BCC00B29B18 /* CPAppDelegate.h */,
+				B07CB5E518FB9BCC00B29B18 /* CPAppDelegate.m */,
+				B07CB5E718FB9BCC00B29B18 /* Images.xcassets */,
+				B07CB5DC18FB9BCC00B29B18 /* Supporting Files */,
+				B07CB60418FB9C1100B29B18 /* Storyboard.storyboard */,
+				B07CB66918FBBC5200B29B18 /* LineViewController.h */,
+				B07CB66A18FBBC5200B29B18 /* LineViewController.m */,
+				B07CB66C18FBBC5D00B29B18 /* ColumnViewController.h */,
+				B07CB66D18FBBC5D00B29B18 /* ColumnViewController.m */,
+			);
+			path = CorePlot;
+			sourceTree = "<group>";
+		};
+		B07CB5DC18FB9BCC00B29B18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B07CB5DD18FB9BCC00B29B18 /* CorePlot-Info.plist */,
+				B07CB5DE18FB9BCC00B29B18 /* InfoPlist.strings */,
+				B07CB5E118FB9BCC00B29B18 /* main.m */,
+				B07CB5E318FB9BCC00B29B18 /* CorePlot-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B07CB5F418FB9BCC00B29B18 /* CorePlotTests */ = {
+			isa = PBXGroup;
+			children = (
+				B07CB5FA18FB9BCC00B29B18 /* CorePlotTests.m */,
+				B07CB5F518FB9BCC00B29B18 /* Supporting Files */,
+			);
+			path = CorePlotTests;
+			sourceTree = "<group>";
+		};
+		B07CB5F518FB9BCC00B29B18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B07CB5F618FB9BCC00B29B18 /* CorePlotTests-Info.plist */,
+				B07CB5F718FB9BCC00B29B18 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B07CB67018FBBD3300B29B18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B07CB67618FBBD3300B29B18 /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B07CB5D118FB9BCC00B29B18 /* CorePlot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B07CB5FE18FB9BCC00B29B18 /* Build configuration list for PBXNativeTarget "CorePlot" */;
+			buildPhases = (
+				B07CB5CE18FB9BCC00B29B18 /* Sources */,
+				B07CB5CF18FB9BCC00B29B18 /* Frameworks */,
+				B07CB5D018FB9BCC00B29B18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B07CB67818FBBD3E00B29B18 /* PBXTargetDependency */,
+			);
+			name = CorePlot;
+			productName = CorePlot;
+			productReference = B07CB5D218FB9BCC00B29B18 /* CorePlot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B07CB5EC18FB9BCC00B29B18 /* CorePlotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B07CB60118FB9BCC00B29B18 /* Build configuration list for PBXNativeTarget "CorePlotTests" */;
+			buildPhases = (
+				B07CB5E918FB9BCC00B29B18 /* Sources */,
+				B07CB5EA18FB9BCC00B29B18 /* Frameworks */,
+				B07CB5EB18FB9BCC00B29B18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B07CB5F318FB9BCC00B29B18 /* PBXTargetDependency */,
+			);
+			name = CorePlotTests;
+			productName = CorePlotTests;
+			productReference = B07CB5ED18FB9BCC00B29B18 /* CorePlotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B07CB5CA18FB9BCC00B29B18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = brilliantech;
+				TargetAttributes = {
+					B07CB5D118FB9BCC00B29B18 = {
+						DevelopmentTeam = 58FSFGRL4P;
+					};
+					B07CB5EC18FB9BCC00B29B18 = {
+						TestTargetID = B07CB5D118FB9BCC00B29B18;
+					};
+				};
+			};
+			buildConfigurationList = B07CB5CD18FB9BCC00B29B18 /* Build configuration list for PBXProject "CorePlot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B07CB5C918FB9BCC00B29B18;
+			productRefGroup = B07CB5D318FB9BCC00B29B18 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B07CB67018FBBD3300B29B18 /* Products */;
+					ProjectRef = B07CB66F18FBBD3300B29B18 /* CorePlot-CocoaTouch.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B07CB5D118FB9BCC00B29B18 /* CorePlot */,
+				B07CB5EC18FB9BCC00B29B18 /* CorePlotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B07CB67618FBBD3300B29B18 /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = B07CB67518FBBD3300B29B18 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B07CB5D018FB9BCC00B29B18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B07CB5E018FB9BCC00B29B18 /* InfoPlist.strings in Resources */,
+				B07CB5E818FB9BCC00B29B18 /* Images.xcassets in Resources */,
+				B07CB60518FB9C1100B29B18 /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B07CB5EB18FB9BCC00B29B18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B07CB5F918FB9BCC00B29B18 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B07CB5CE18FB9BCC00B29B18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B07CB5E218FB9BCC00B29B18 /* main.m in Sources */,
+				B07CB5E618FB9BCC00B29B18 /* CPAppDelegate.m in Sources */,
+				B07CB66E18FBBC5D00B29B18 /* ColumnViewController.m in Sources */,
+				B07CB66B18FBBC5200B29B18 /* LineViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B07CB5E918FB9BCC00B29B18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B07CB5FB18FB9BCC00B29B18 /* CorePlotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B07CB5F318FB9BCC00B29B18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B07CB5D118FB9BCC00B29B18 /* CorePlot */;
+			targetProxy = B07CB5F218FB9BCC00B29B18 /* PBXContainerItemProxy */;
+		};
+		B07CB67818FBBD3E00B29B18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CorePlot-CocoaTouch";
+			targetProxy = B07CB67718FBBD3E00B29B18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B07CB5DE18FB9BCC00B29B18 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B07CB5DF18FB9BCC00B29B18 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B07CB5F718FB9BCC00B29B18 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B07CB5F818FB9BCC00B29B18 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B07CB5FC18FB9BCC00B29B18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B07CB5FD18FB9BCC00B29B18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B07CB5FF18FB9BCC00B29B18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CorePlot/CorePlot-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PROJECT_DIR}/framework/**",
+				);
+				INFOPLIST_FILE = "CorePlot/CorePlot-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CorePlot",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B07CB60018FB9BCC00B29B18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CorePlot/CorePlot-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PROJECT_DIR}/framework/**",
+				);
+				INFOPLIST_FILE = "CorePlot/CorePlot-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CorePlot",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B07CB60218FB9BCC00B29B18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CorePlot.app/CorePlot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CorePlot/CorePlot-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CorePlotTests/CorePlotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B07CB60318FB9BCC00B29B18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CorePlot.app/CorePlot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CorePlot/CorePlot-Prefix.pch";
+				INFOPLIST_FILE = "CorePlotTests/CorePlotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B07CB5CD18FB9BCC00B29B18 /* Build configuration list for PBXProject "CorePlot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B07CB5FC18FB9BCC00B29B18 /* Debug */,
+				B07CB5FD18FB9BCC00B29B18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B07CB5FE18FB9BCC00B29B18 /* Build configuration list for PBXNativeTarget "CorePlot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B07CB5FF18FB9BCC00B29B18 /* Debug */,
+				B07CB60018FB9BCC00B29B18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B07CB60118FB9BCC00B29B18 /* Build configuration list for PBXNativeTarget "CorePlotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B07CB60218FB9BCC00B29B18 /* Debug */,
+				B07CB60318FB9BCC00B29B18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B07CB5CA18FB9BCC00B29B18 /* Project object */;
+}
