@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CorePlotHeaders/CorePlot-CocoaTouch.h"
 
-@interface LineViewController : UIViewController
+@interface LineViewController : UIViewController<CPTPlotDataSource>
 
 @end

@@ -541,6 +541,7 @@
 				B07CB60018FB9BCC00B29B18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B07CB60118FB9BCC00B29B18 /* Build configuration list for PBXNativeTarget "CorePlotTests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +550,7 @@
 				B07CB60318FB9BCC00B29B18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
