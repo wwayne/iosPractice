@@ -31,6 +31,7 @@
 		B0D80F5518FC95DF00D02988 /* ImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D80F5418FC95DF00D02988 /* ImageTransformer.m */; };
 		B0E22B7918E2A44000494647 /* ItemDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E22B7718E2A44000494647 /* ItemDetailVC.m */; };
 		B0E22B7A18E2A44000494647 /* ItemDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E22B7818E2A44000494647 /* ItemDetailVC.xib */; };
+		B0F17FC819017A7B00879AB4 /* NSManageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F17FC719017A7B00879AB4 /* NSManageItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		B0E22B7618E2A44000494647 /* ItemDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailVC.h; sourceTree = "<group>"; };
 		B0E22B7718E2A44000494647 /* ItemDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailVC.m; sourceTree = "<group>"; };
 		B0E22B7818E2A44000494647 /* ItemDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetailVC.xib; sourceTree = "<group>"; };
+		B0F17FC619017A7B00879AB4 /* NSManageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSManageItem.h; path = ../NSManageItem.h; sourceTree = "<group>"; };
+		B0F17FC719017A7B00879AB4 /* NSManageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSManageItem.m; path = ../NSManageItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,8 @@
 		B0C33D1618DFBCE300009DD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B0F17FC619017A7B00879AB4 /* NSManageItem.h */,
+				B0F17FC719017A7B00879AB4 /* NSManageItem.m */,
 				B0C33D1718DFBCFE00009DD0 /* ItemStore.h */,
 				B0C33D1818DFBCFE00009DD0 /* ItemStore.m */,
 				B0C33D1B18DFC4B600009DD0 /* Item.h */,
@@ -340,6 +345,7 @@
 				B0C33D1518DFB8BC00009DD0 /* WZXItemsTableViewController.m in Sources */,
 				B079B47D18F8EA300076F902 /* ImagePopoverViewController.m in Sources */,
 				B0C33D1918DFBCFE00009DD0 /* ItemStore.m in Sources */,
+				B0F17FC819017A7B00879AB4 /* NSManageItem.m in Sources */,
 				B0C33CF018DFB6E600009DD0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

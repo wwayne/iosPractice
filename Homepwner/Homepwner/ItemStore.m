@@ -8,8 +8,12 @@
 
 #import "ItemStore.h"
 #import "Item.h"
+#import <CoreData/CoreData.h>
+
 @interface ItemStore()
-@property (nonatomic,strong)NSMutableArray *privateItemsArray;
+@property (nonatomic,strong) NSMutableArray *privateItemsArray;
+@property (nonatomic,strong) NSManagedObjectContext *manageContext;
+@property (nonatomic,strong) NSManagedObjectModel *manageModel;
 @end
 
 @implementation ItemStore
@@ -32,12 +36,14 @@
 {
     self=[super init];
     if(self){
-        NSString *path=[self itemPath];
-        self.privateItemsArray=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
+//        NSString *path=[self itemPath];
+//        self.privateItemsArray=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
+//        
+//        if(!self.privateItemsArray){
+//            self.privateItemsArray=[[NSMutableArray alloc] init];
+//        }
+        self.manageModel=[NSManagedObjectModel mergedModelFromBundles:nil];
         
-        if(!self.privateItemsArray){
-            self.privateItemsArray=[[NSMutableArray alloc] init];
-        }
     }
     return self;
 }
@@ -64,7 +70,8 @@
 {
     NSArray *documentDictionary=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *document=[documentDictionary firstObject];
-    return [document stringByAppendingPathComponent:@"items2.0.archive"];
+//    return [document stringByAppendingPathComponent:@"items2.0.archive"];
+    return [document stringByAppendingPathComponent:@"store.data"];
 }
 -(BOOL)saveChange
 {
