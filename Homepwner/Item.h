@@ -11,14 +11,14 @@
 
 
 
-@interface NSManageItem : NSManagedObject
+@interface Item : NSManagedObject
 
 @property (nonatomic, retain) NSString * key;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic) float  * order;
+@property (nonatomic) double order;
 @property (nonatomic, retain) NSString * serial;
 @property (nonatomic, retain) UIImage *thumbnail;
-@property (nonatomic) int * value;
+@property (nonatomic) int value;
 @property (nonatomic, retain) NSManagedObject *toAsset;
 -(void)setThumbNailFromImage:(UIImage *)image;
 @end

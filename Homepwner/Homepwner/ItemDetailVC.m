@@ -77,9 +77,9 @@
     [super viewWillAppear:animated];
     Item *item=self.item;
    
-    self.name.text=item.itemName;
-    self.serial.text=item.serialNumber;
-    self.value.text=[NSString stringWithFormat:@"%d",item.valueInDollars];
+    self.name.text=item.name;
+    self.serial.text=item.serial;
+    self.value.text=[NSString stringWithFormat:@"%d",item.value];
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     self.data.text=[dateFormatter stringFromDate:[NSDate date]];
@@ -96,8 +96,8 @@
     [self.view addSubview:image];
     self.image=image;
     Item *item=self.item;
-    if(item.itemImage){
-        self.image.image=item.itemImage;
+    if(item.thumbnail){
+        self.image.image=item.thumbnail;
     }
     [self.image setContentHuggingPriority:200
                                       forAxis:UILayoutConstraintAxisVertical];
@@ -122,20 +122,20 @@
     [super viewWillDisappear:animated];
     [self.view endEditing:YES];
     Item *item=self.item;
-    item.itemName=self.name.text;
-    item.serialNumber=self.serial.text;
-    item.valueInDollars=[self.value.text intValue];
+    item.name=self.name.text;
+    item.serial=self.serial.text;
+    item.value=[self.value.text intValue];
     if(self.image.image){
         ImageStore *imageStore=[ImageStore sharedImage];
         //use item.uniqueKey so that item can find corresponding image
         [imageStore addImage:self.image.image
-                      forKey:item.uniqueKey];
+                      forKey:item.key];
     }
     
 }
 -(void)setItem:(Item *)item{
     _item=item;
-    self.navigationItem.title=item.itemName;
+    self.navigationItem.title=item.name;
 }
 -(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {

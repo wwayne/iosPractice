@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 wayne. All rights reserved.
 //
 
-#import "NSManageItem.h"
+#import "Item.h"
 
 
-@implementation NSManageItem
+@implementation Item
 
 @dynamic key;
 @dynamic name;

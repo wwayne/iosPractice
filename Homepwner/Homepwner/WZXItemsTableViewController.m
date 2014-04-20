@@ -112,17 +112,17 @@
     Item *item=allItems[indexPath.row];
 //    cell.textLabel.text=[item description];
 //    cell.itemImage.image=item.itemImage;
-    cell.itemName.text=item.itemName;
-    cell.itemSerial.text=item.serialNumber;
-    cell.itemValue.text=[NSString stringWithFormat:@"%d",item.valueInDollars];
-    cell.thumbImage.image=item.thumbNail;
+    cell.itemName.text=item.name;
+    cell.itemSerial.text=item.serial;
+    cell.itemValue.text=[NSString stringWithFormat:@"%d",item.value];
+    cell.thumbImage.image=item.thumbnail;
     //give the block a weak reference to the cell
     __weak ItemCell *weakCell=cell;
     cell.tapButton=^(){
         if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad)
         {
             NSDictionary *imageDictionary=[[ImageStore sharedImage] getImageArray];
-            UIImage *image=[imageDictionary objectForKey:item.uniqueKey];
+            UIImage *image=[imageDictionary objectForKey:item.key];
             if(!image){
                 return ;
             }
