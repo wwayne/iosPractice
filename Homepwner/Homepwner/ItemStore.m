@@ -48,7 +48,7 @@
         
         //where the data sqlite file go
         NSString *urlString=[self itemPath];
-        NSURL *url=[NSURL URLWithString:urlString];
+        NSURL *url=[NSURL fileURLWithPath:urlString isDirectory:NO];
         
         NSError *error=nil;
         if(![psd addPersistentStoreWithType:NSSQLiteStoreType
@@ -73,6 +73,34 @@
 -(NSArray *)allItems{
     return [self.privateItemsArray copy];
 }
+-(NSArray *)getAllAssets
+{
+    if(!self.allAssets){
+        NSFetchRequest *fetch=[[NSFetchRequest alloc] init];
+        NSEntityDescription *entity=[NSEntityDescription entityForName:@"Asset"
+                                                inManagedObjectContext:self.manageContext];
+        fetch.entity=entity;
+        NSError *error;
+        NSArray *result=[self.manageContext executeFetchRequest:fetch
+                                                          error:&error];
+        if(!result){
+            [NSException raise:@"fetch fail"
+                        format:@"%@",[error localizedDescription]];
+        }
+        self.allAssets=[result mutableCopy];
+        
+    }
+    if(self.allAssets.count==0){
+        NSManagedObject *manageObject;
+        for(int i=0;i<3;i++){
+           manageObject=[NSEntityDescription insertNewObjectForEntityForName:@"Asset"
+                                                      inManagedObjectContext:self.manageContext];
+           [manageObject setValue:[NSString stringWithFormat:@"Im %d",i] forKey:@"label"];
+           [self.allAssets addObject:manageObject];
+        }
+    }
+    return self.allAssets;
+}
 -(Item *)addStoreItem{
 //    Item *item=[[Item alloc] init];
     double order;
@@ -82,11 +110,11 @@
     else{
         order=[[self.privateItemsArray lastObject] order] + 1.0 ;
     }
-    NSLog(@"after adding %lu , the order is %.2f",[self.privateItemsArray count],order);
+
     
     Item *item=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.manageContext];
     [self.privateItemsArray addObject:item];
-
+    item.order=order;
     return item;
 }
 -(void)removeStoreItem:(Item *)item{
@@ -96,11 +124,36 @@
     [self.manageContext deleteObject:item];
 }
 -(void)moveItemPositon:(NSUInteger)from to:(NSUInteger)to
+
 {
+    if(from==to){
+        return;
+    }
+//    NSLog(@"%d",to);
     Item *moveItem=self.privateItemsArray[from];
     [self.privateItemsArray removeObjectAtIndex:from];
     [self.privateItemsArray insertObject:moveItem atIndex:to];
-}
+    
+    float lowBound=0.0;
+    if(to>0){
+        lowBound=[self.allItems[to-1] order];
+    }
+    else if(to==0){
+        lowBound=0.0;
+    }
+    float upBound=0.0;
+    if(to<[self.allItems count]-1){
+        upBound=[self.allItems[to+1] order];
+    }
+    else if(to==[self.allItems count]-1){
+        upBound=(float)([self.allItems count]+1);
+    }
+    double order=(lowBound+upBound)/2;
+    moveItem.order=order;
+    for(int i =0;i<[self.privateItemsArray count];i++){
+        NSLog(@"%f",[self.privateItemsArray[i] order]);
+    }
+   }
 -(NSString *)itemPath
 {
     NSArray *documentDictionary=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

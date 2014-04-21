@@ -4,7 +4,7 @@
         <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="toItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" syncable="YES"/>
     </entity>
-    <entity name="Item" representedClassName="NSManageItem" syncable="YES">
+    <entity name="Item" representedClassName="Item" syncable="YES">
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -14,7 +14,7 @@
         <relationship name="toAsset" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="Asset" positionX="-45" positionY="45" width="128" height="75"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

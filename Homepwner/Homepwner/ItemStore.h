@@ -11,6 +11,7 @@
 
 @interface ItemStore : NSObject
 @property (nonatomic,readonly) NSArray *allItems;
+@property (nonatomic,strong) NSMutableArray *allAssets;
 
 -(Item *)addStoreItem;
 -(void)removeStoreItem:(Item *)item;
