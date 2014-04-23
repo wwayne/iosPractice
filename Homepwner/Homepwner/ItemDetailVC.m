@@ -11,6 +11,7 @@
 #import "Item.h"
 #import "ImageStore.h"
 #import "ItemStore.h"
+#import "AssetTableViewController.h"
 
 @interface ItemDetailVC ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UIPopoverControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *name;
@@ -24,6 +25,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *serialLabel;
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+@property (weak, nonatomic) IBOutlet UIButton *typeButton;
+
+- (IBAction)chooseType:(id)sender;
+
 @end
 
 @implementation ItemDetailVC
@@ -87,6 +92,12 @@
     UIInterfaceOrientation io=[self interfaceOrientation];
     [self checkOrientataionAndDevice:io];
     [self updateFont];
+    
+    if(item.toAsset){
+        
+        self.typeButton.titleLabel.text=[item.toAsset valueForKey:@"label"];
+    }
+    
 }
 -(void)viewDidLoad
 {
@@ -230,5 +241,11 @@
     self.nameLabel.font=font;
     self.serialLabel.font=font;
     self.valueLabel.font=font;
+}
+- (IBAction)chooseType:(id)sender {
+    AssetTableViewController *asset=[[AssetTableViewController alloc] init];
+    asset.myItem=self.item;
+    [self.navigationController pushViewController:asset
+                                         animated:YES];
 }
 @end

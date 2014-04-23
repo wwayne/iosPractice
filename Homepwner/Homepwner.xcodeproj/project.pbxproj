@@ -27,6 +27,7 @@
 		B0C33D0918DFB6E600009DD0 /* HomepwnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C33D0818DFB6E600009DD0 /* HomepwnerTests.m */; };
 		B0C33D1518DFB8BC00009DD0 /* WZXItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C33D1418DFB8BC00009DD0 /* WZXItemsTableViewController.m */; };
 		B0C33D1918DFBCFE00009DD0 /* ItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C33D1818DFBCFE00009DD0 /* ItemStore.m */; };
+		B0D3A8331906A05800266A26 /* AssetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D3A8321906A05800266A26 /* AssetTableViewController.m */; };
 		B0D80F5218FC922600D02988 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0D80F5018FC922600D02988 /* CoreData.xcdatamodeld */; };
 		B0D80F5518FC95DF00D02988 /* ImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D80F5418FC95DF00D02988 /* ImageTransformer.m */; };
 		B0E22B7918E2A44000494647 /* ItemDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E22B7718E2A44000494647 /* ItemDetailVC.m */; };
@@ -74,6 +75,8 @@
 		B0C33D1418DFB8BC00009DD0 /* WZXItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZXItemsTableViewController.m; sourceTree = "<group>"; };
 		B0C33D1718DFBCFE00009DD0 /* ItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemStore.h; sourceTree = "<group>"; };
 		B0C33D1818DFBCFE00009DD0 /* ItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemStore.m; sourceTree = "<group>"; };
+		B0D3A8311906A05800266A26 /* AssetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetTableViewController.h; sourceTree = "<group>"; };
+		B0D3A8321906A05800266A26 /* AssetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetTableViewController.m; sourceTree = "<group>"; };
 		B0D80F5118FC922600D02988 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		B0D80F5318FC95DF00D02988 /* ImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTransformer.h; sourceTree = "<group>"; };
 		B0D80F5418FC95DF00D02988 /* ImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTransformer.m; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				B0E22B7718E2A44000494647 /* ItemDetailVC.m */,
 				B079B47B18F8EA300076F902 /* ImagePopoverViewController.h */,
 				B079B47C18F8EA300076F902 /* ImagePopoverViewController.m */,
+				B0D3A8311906A05800266A26 /* AssetTableViewController.h */,
+				B0D3A8321906A05800266A26 /* AssetTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				B02DB29418F618B800667E9A /* ItemCell.m in Sources */,
 				B0C33D1518DFB8BC00009DD0 /* WZXItemsTableViewController.m in Sources */,
 				B0BD1AD11905648D0043F336 /* Item.m in Sources */,
+				B0D3A8331906A05800266A26 /* AssetTableViewController.m in Sources */,
 				B079B47D18F8EA300076F902 /* ImagePopoverViewController.m in Sources */,
 				B0C33D1918DFBCFE00009DD0 /* ItemStore.m in Sources */,
 				B0C33CF018DFB6E600009DD0 /* main.m in Sources */,

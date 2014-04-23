@@ -13,6 +13,7 @@
                 <outlet property="serial" destination="INE-vZ-Kn2" id="FRd-QB-Ku1"/>
                 <outlet property="serialLabel" destination="8uO-Xz-6bk" id="Zfb-w8-EKD"/>
                 <outlet property="toolBar" destination="j7b-nI-edw" id="Jfv-4L-gXE"/>
+                <outlet property="typeButton" destination="LUa-Ty-h9b" id="dER-tk-ecF"/>
                 <outlet property="value" destination="acG-Qq-ckh" id="2Bh-Yq-l09"/>
                 <outlet property="valueLabel" destination="oog-rB-z2z" id="dhH-68-6hD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="j2J-0u-sMw"/>
@@ -89,6 +90,18 @@
                             <connections>
                                 <action selector="takePhoto:" destination="-1" id="YYd-dw-3Mn"/>
                             </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" id="anq-tY-M95">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LUa-Ty-h9b">
+                                <rect key="frame" x="51" y="6" width="227" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseType:" destination="-1" eventType="touchUpInside" id="jGy-6f-mFF"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </items>
                 </toolbar>
